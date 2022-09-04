@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <h2>詳細</h2>
-        <input v-model="book.title" type="text" />
-        <input v-model="book.author" type="text" />
-        <button @click="onClickEdit">修正</button>
-        <nuxt-link :to="{ name: 'index' }">
-            <p>Book List</p>
-        </nuxt-link>
-    </div>
+  <div>
+    <h2>詳細</h2>
+    <input v-model="book.title" type="text" />
+    <input v-model="book.author" type="text" />
+    <input v-model="book.foodform" type="text" />
+    <input v-model="book.material" type="text" />
+    <input v-model="book.category" type="text" />
+    <button @click="onClickEdit">修正</button>
+    <nuxt-link :to="{ name: 'index' }">
+      <p>Book List</p>
+    </nuxt-link>
+  </div>
 </template>
 
 <script lang="ts">
@@ -34,6 +37,10 @@ export default Vue.extend({
         id: 0,
         title: '',
         author: '',
+        foodform: '',
+        material: '',
+        category: '',
+        
       },
     }
   },

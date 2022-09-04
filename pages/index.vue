@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>List</h2>
+    <h2>E-CARE</h2>
     <ul v-for="(book, i) in books" :key="i">
       <li>{{ book.title }}</li>
       <nuxt-link :to="{ name: 'book-detail-id', params: { id: book.id } }"><button>詳細</button>
@@ -8,8 +8,11 @@
       <button @click="onClickDelete(book.id)">削除</button>
     </ul>
     <h3>新規追加</h3>
-    <input v-model="form.title" type="text" placeholder="title" /><br />
-    <input v-model="form.author" type="text" placeholder="author" /><br />
+    <input v-model="form.title" type="text" placeholder="料理名" /><br />
+    <input v-model="form.author" type="text" placeholder="紹介" /><br />
+    <input v-model="form.foodform" type="text" placeholder="食形態" /><br />
+    <input v-model="form.material" type="text" placeholder="材料" /><br />
+    <input v-model="form.category" type="text" placeholder="カテゴリ" /><br />
     <button @click="onClickAdd">追加</button>
   </div>
 </template>
@@ -21,6 +24,9 @@ import {BookService, BookResponse } from '@/service/book'
 interface Form {
   title: string
   author: string
+  foodform: string
+  material: string
+  category: string
 }
 
 type Book = BookResponse
@@ -39,7 +45,7 @@ export default Vue.extend({
   },
   data(): DataType {
     return {
-      form: { title: '', author: '' },
+      form: { title: '', author: '' ,foodform:'',material:'',category:''},
       books: [],
     }
   },
@@ -47,7 +53,7 @@ export default Vue.extend({
     async onClickAdd() {
       await BookService.postBookData({ ...this.form })
       this.books = await BookService.fetchBooks()
-      this.form = { title: '', author: '' }
+      this.form = { title: '', author: '' , foodform:'',material:'',category:''}
     },
     async onClickDelete(bookId: number) {
       await BookService.deleteBook(bookId)

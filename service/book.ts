@@ -4,11 +4,17 @@ export interface BookResponse {
     id: number
     title: string
     author: string
+    foodform: string
+    material: string
+    category: string
 }
 
 export interface BookRequest {
     title: string
     author: string
+    foodform: string
+    material: string
+    category: string
 }
 
 export class BookService {
