@@ -1,12 +1,15 @@
 <template>
   <div>
     <h2>E-CARE</h2>
-    <ul v-for="(book, i) in books" :key="i">
+    <nuxt-link :to="{ name: 'list' }">
+      <p>レシピ一覧</p>
+    </nuxt-link>
+    <!-- <ul v-for="(book, i) in books" :key="i">
       <li>{{ book.title }}</li>
       <nuxt-link :to="{ name: 'book-detail-id', params: { id: book.id } }"><button>詳細</button>
       </nuxt-link>
       <button @click="onClickDelete(book.id)">削除</button>
-    </ul>
+    </ul> -->
     <h3>新規追加</h3>
     <input v-model="form.title" type="text" placeholder="料理名" /><br />
     <input v-model="form.author" type="text" placeholder="紹介" /><br />
