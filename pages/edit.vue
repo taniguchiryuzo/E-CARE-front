@@ -4,7 +4,7 @@
             <li>{{ book.title }}</li>
             <nuxt-link :to="{ name: 'book-detail-id', params: { id: book.id } }"><button>詳細</button>
             </nuxt-link>
-            <!-- <button @click="onClickDelete(book.id)">削除</button> -->
+            <button @click="onClickDelete(book.id)">削除</button>
         </ul>
     </div>
 </template>
@@ -55,5 +55,4 @@ export default Vue.extend({
 })
 </script>
 <style>
-
 </style>

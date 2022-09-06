@@ -48,7 +48,7 @@ export default Vue.extend({
   },
   data(): DataType {
     return {
-      form: { title: '', author: '' ,foodform:'',material:'',category:''},
+      form: { title: '', author: '' , foodform: '', material: '', category: ''},
       books: [],
     }
   },
@@ -56,7 +56,7 @@ export default Vue.extend({
     async onClickAdd() {
       await BookService.postBookData({ ...this.form })
       this.books = await BookService.fetchBooks()
-      this.form = { title: '', author: '' , foodform:'',material:'',category:''}
+      this.form = { title: '', author: '', foodform: '', material: '', category: ''}
     },
     async onClickDelete(bookId: number) {
       await BookService.deleteBook(bookId)
@@ -65,3 +65,11 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.page {
+  background-color: white;
+
+  @media screen and (max-width: 480px) {
+    background-color: black;
+  }

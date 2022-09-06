@@ -1,17 +1,18 @@
 <template>
   <div>
-    <h2>詳細</h2>
+    <h2>レシピ</h2>
     <input v-model="book.title" type="text" />
     <input v-model="book.author" type="text" />
     <input v-model="book.foodform" type="text" />
     <input v-model="book.material" type="text" />
     <input v-model="book.category" type="text" />
-    <button @click="onClickEdit">修正</button>
-    <nuxt-link :to="{ name: 'index' }">
-      <p>Book List</p>
+    <!-- <button @click="onClickEdit">修正</button> -->
+    <nuxt-link :to="{ name: 'list' }">
+      <p>レシピ一覧へ</p>
     </nuxt-link>
   </div>
 </template>
+
 
 <script lang="ts">
 import Vue from 'vue'

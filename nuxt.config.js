@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: 'https://d.line-scdn.net/liff/1.0/sdk.js' }], //ADD HERE
+    script: [{ src: 'https://d.line-scdn.net/liff/1.0/sdk.js' }], //0905追加
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -51,7 +51,7 @@ export default {
   },
 
   proxy: { // <= 追加
-    '/api': 'http://localhost:8000', // <= 追加
+    '/api': 'http://kousei0038.sakura.ne.jp/project', // <= 追加
   }, // <= 追加
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
